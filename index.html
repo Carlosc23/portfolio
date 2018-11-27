@@ -3,9 +3,22 @@
 <html>
 
 <head>
-	<title>Strata by HTML5 UP</title>
+	<title>Portfolio</title>
+	<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+	<script type="text/javascript">
+	   (function(){
+		  emailjs.init("user_FvYWsmqPj1Tn1ZbmTM918");
+	   })();
+	</script>
+		<script type="text/javascript">
+			window.onload = function() {
+				document.getElementById('contact-form').addEventListener('submit', function(event) {
+					event.preventDefault();
+					emailjs.sendForm('carlos_calderon097_gmail_com', 'template_QZzme1fJ','#contact-form');
+				});
+			}
+		</script>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
@@ -123,15 +136,15 @@
 			<p>If you wish more information about the projects.</p>
 			<div class="row">
 				<div class="col-8 col-12-small">
-					<form method="post" action="#">
+					<form  id="contact-form">
 						<div class="row gtr-uniform gtr-50">
-							<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-							<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-							<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+							<div class="col-6 col-12-xsmall"><input type="text" name="to_name"  placeholder="Your name" /></div>
+							<div class="col-6 col-12-xsmall"><input type="email" name="from_name"  placeholder="Your Email" /></div>
+							<div class="col-12"><textarea name="message_html"  placeholder="Message" rows="4"></textarea></div>
 						</div>
 					</form>
 					<ul class="actions">
-						<li><input type="submit" value="Send Message" /></li>
+						<li><input type="submit" value="Send" /></li>
 					</ul>
 				</div>
 				<div class="col-4 col-12-small">
